@@ -92,14 +92,15 @@
             </button>
             <button onclick="filterProduct('Watch')" class="btn">Watch</button>
           </div>
-          <div class="flex gap-5">
-            <button class="btn" onclick="sortProducts('low-to-high')">
-              Price: Low to High
-            </button>
-            <button class="btn" onclick="sortProducts('high-to-low')">
-              Price: High to Low
-            </button>
+          
+          <div>
+            <select id="sort-price" class="p-2 border rounded">
+              <option value="low">Low to High</option>
+              <option value="high">High to Low</option>
+          </select>
           </div>
+          
+        
         </div>
       </div>
       <div id="products" class="grid md:grid-cols-3 gap-4 my-10 p-3 md:p-0"></div>

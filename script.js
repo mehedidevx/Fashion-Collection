@@ -148,7 +148,21 @@ let products = {
   };
 
 
+  function sortByPrice(order) {
+    let productContainer = document.getElementById("products");
+    let cards = Array.from(productContainer.children);
 
+    cards.sort((a, b) => {
+        let priceA = parseFloat(a.querySelector("h5:nth-child(2)").innerText.replace("$", ""));
+        let priceB = parseFloat(b.querySelector("h5:nth-child(2)").innerText.replace("$", ""));
+        return order === "low" ? priceA - priceB : priceB - priceA;
+    });
+
+    cards.forEach(card => productContainer.appendChild(card));
+}
+document.getElementById("sort-price").addEventListener("change", function () {
+  sortByPrice(this.value);
+});
  
 
 
